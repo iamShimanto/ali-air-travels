@@ -65,14 +65,6 @@ const userLogIn = async (req, res) => {
       return errorResponse(res, 400, "User token not found");
     }
 
-    res.cookie("token", token, {
-      httpOnly: true,
-      secure: process.env.NODE_ENV === "production",
-      sameSite: process.env.NODE_ENV === "production" ? "none" : "lax",
-      maxAge: 1000 * 60 * 60 * 24 * 7,
-      path: "/",
-    });
-
     existUser.password = undefined;
     existUser.verifyCode = undefined;
     existUser.verifyCodeExpiry = undefined;
@@ -165,9 +157,95 @@ const verifyCode = async (req, res) => {
   }
 };
 
+const allUsers = async (req, res) => {
+  try {
+    const { role } = req.query;
+
+    const users = await Users.find({ role })
+      .select("-password")
+      .sort({ createdAt: 1 });
+    if (users.length === 0) return errorResponse(res, 404, "users not found");
+
+    const total = users.length;
+
+    return successResponse(res, 200, "fetch all users successfully", {
+      total,
+      users,
+    });
+  } catch (error) {
+    return errorResponse(res, 500, "all users failed", error);
+  }
+};
+
+const getSingleUser = async (req, res) => {
+  const { id } = req.params;
+  try {
+    const user = await Users.findById(id);
+    if (!user) {
+      return errorResponse(res, 404, "User not found");
+    }
+    user.password = undefined;
+    return successResponse(res, 200, "User fetched successfully", user);
+  } catch (error) {
+    return errorResponse(res, 500, "single user fetched failed");
+  }
+};
+
+const userRoleUpdate = async (req, res) => {
+  const { id } = req.params;
+  const { role } = req.body;
+  try {
+    if (!id) {
+      return errorResponse(res, 404, "user id not found");
+    }
+    if (!role) {
+      return errorResponse(res, 404, "user role not found");
+    }
+
+    const updateUser = await Users.findByIdAndUpdate(
+      id,
+      { role },
+      { new: true }
+    );
+    if (!updateUser) {
+      return errorResponse(res, 404, "user not found");
+    }
+    updateUser.password = undefined;
+    return successResponse(
+      res,
+      200,
+      "user role updated successfully",
+      updateUser
+    );
+  } catch (error) {
+    return errorResponse(res, 500, "user role update failed");
+  }
+};
+
+const getProfile = async (req, res) => {
+  try {
+    const userId = req.userId;
+    const user = await Users.findById(userId).select(
+      "-password -verifyCode -verifyCodeExpiry"
+    );
+
+    if (!user) {
+      return errorResponse(res, 404, "User not found");
+    }
+
+    return successResponse(res, 200, "Profile fetched successfully", user);
+  } catch (error) {
+    return errorResponse(res, 500, "Error fetching profile", error);
+  }
+};
+
 module.exports = {
   userSignUp,
   userLogIn,
   sendVerifyCode,
   verifyCode,
+  allUsers,
+  getSingleUser,
+  userRoleUpdate,
+  getProfile,
 };
