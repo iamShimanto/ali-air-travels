@@ -7,6 +7,8 @@ const cookieParser = require("cookie-parser");
 const compression = require("compression");
 const cors = require("cors");
 const authRoute = require("./routes/authRoute");
+const packageRoute = require("./routes/packageRoute")
+
 
 // ======== dbconfig
 dbConfig();
@@ -25,6 +27,7 @@ app.use(
 
 // =========== routes
 app.use("/api/auth", authRoute);
+app.use("/api/package", packageRoute)
 
 app.get("/", (req, res) => {
   res.send("server is running");
