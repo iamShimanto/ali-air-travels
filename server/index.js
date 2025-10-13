@@ -8,6 +8,7 @@ const compression = require("compression");
 const cors = require("cors");
 const authRoute = require("./routes/authRoute");
 const packageRoute = require("./routes/packageRoute")
+const bookingRoute = require("./routes/bookingRoute")
 
 
 // ======== dbconfig
@@ -28,6 +29,7 @@ app.use(
 // =========== routes
 app.use("/api/auth", authRoute);
 app.use("/api/package", packageRoute)
+app.use("/api/booking", bookingRoute)
 
 app.get("/", (req, res) => {
   res.send("server is running");

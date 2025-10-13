@@ -2,52 +2,34 @@ const mongoose = require("mongoose");
 
 const packageSchema = new mongoose.Schema(
   {
-    title: {
-      type: String,
-      required: true,
-      unique: true,
-    },
-    price: {
-      type: Number,
-    },
-    slug: {
-      type: String,
-      required: true,
-      unique: true,
-    },
-    category: {
-      type: String,
-      required: true,
-      enum: ["umrah", "hajj"],
-    },
-    accommodation: {
-      type: String,
-      required: true,
-    },
-    meal: {
-      type: String,
-      required: true,
-    },
-    transport: {
-      type: String,
-      required: true,
-    },
-    makkahAccommodation: {
-      type: String,
-      required: true,
-    },
-    madinahAccommodation: {
-      type: String,
-      required: true,
-    },
-    Qurbani: {
-      type: Boolean,
-      default: false,
-    },
+    type: { type: String, enum: ["hajj", "umrah"], required: true },
+    category: { type: String, enum: ["regular", "premium"], required: true },
+
+    title_en: { type: String, required: true },
+    title_bn: { type: String, required: true },
+
+    price_en: { type: String, required: true },
+    price_bn: { type: String, required: true },
+    duration: { type: String },
+
+    accommodation_en: { type: String, required: true },
+    accommodation_bn: { type: String, required: true },
+    makkah_accommodation_en: { type: String, required: true },
+    makkah_accommodation_bn: { type: String, required: true },
+    madinah_accommodation_en: { type: String, required: true },
+    madinah_accommodation_bn: { type: String, required: true },
+
+    meal_en: { type: String, required: true },
+    meal_bn: { type: String, required: true },
+    transport_en: { type: String, required: true },
+    transport_bn: { type: String, required: true },
+
+    visa_ticket_en: { type: String },
+    visa_ticket_bn: { type: String },
+    qurbani_en: { type: String },
+    qurbani_bn: { type: String },
   },
-  {
-    timestamps: true,
-  }
+  { timestamps: true }
 );
 
 const packageModel = mongoose.model("Package", packageSchema);
