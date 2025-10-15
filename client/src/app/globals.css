@@ -1,0 +1,147 @@
+@import "tailwindcss";
+
+@utility container {
+  margin: 0 auto;
+}
+
+:root {
+  --color-brand: #e79119;
+  --color-light: #f1f1f1;
+  --color-dark: #1e201e;
+}
+@theme {
+  --color-brand: #ff9013;
+  --color-light: #ffffff;
+  --color-dark: #141414;
+  --font-jakarta: "Plus Jakarta Sans", sans-serif;
+  --font-roboto: "Roboto", sans-serif;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+@layer utilities {
+  .text-shadow-darkest {
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2), 2px 2px 2px rgba(0, 0, 0, 0.15),
+      3px 3px 4px rgba(0, 0, 0, 0.1), 4px 4px 6px rgba(0, 0, 0, 0.05);
+  }
+
+  .text-shadow-darker {
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15), 2px 2px 2px rgba(0, 0, 0, 0.1),
+      3px 3px 4px rgba(0, 0, 0, 0.05);
+  }
+
+  .text-shadow-dark {
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1), 2px 2px 2px rgba(0, 0, 0, 0.05),
+      3px 3px 3px rgba(0, 0, 0, 0.025);
+  }
+}
+
+@layer utilities {
+  .text-glow {
+    text-shadow: 0 0 10px rgba(245, 239, 230, 0.6),
+      0 0 20px rgba(245, 239, 230, 0.5), 0 0 40px rgba(245, 239, 230, 0.4);
+  }
+}
+
+.nav-custom-shadow {
+  box-shadow: rgba(0, 0, 0, 0.45) 0px 1px 2px,
+    rgba(0, 0, 0, 0.55) 0px 3px 6px -2px, rgba(0, 0, 0, 0.1) 0px -2px 0px inset;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.animate-slideInFromLeft {
+  animation: slideInFromLeft 0.4s ease-out forwards;
+}
+
+/* slider arrow css */
+/* ==== Swiper Custom Arrow Styles ==== */
+.swiper-button-next,
+.swiper-button-prev {
+  color: #ff6500 !important; /* brand color */
+
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+
+  transition: all 0.3s ease;
+  position: absolute;
+  top: 45% !important;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+
+/* Hover effect */
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  background: #ff6500;
+  color: #fff !important;
+}
+
+/* Arrow icons */
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+/* Positioning inside the slider */
+.swiper-button-next {
+  right: 10px;
+}
+
+.swiper-button-prev {
+  left: 10px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .swiper-button-next,
+  .swiper-button-prev {
+    width: 35px;
+    height: 35px;
+  }
+
+  .swiper-button-next::after,
+  .swiper-button-prev::after {
+    font-size: 14px;
+  }
+}
+
+/* slider arrow css */
