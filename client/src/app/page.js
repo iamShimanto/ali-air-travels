@@ -6,6 +6,7 @@ import MeetTheCeo from "./(user)/components/home/MeetTheCeo";
 
 import UmrahGallery from "./(user)/components/home/UmrahGallery";
 import BelieveInUs from "./(user)/components/home/BelieveInUs";
+import Parallax from "./(user)/components/home/Parallax";
 
 const Page = () => {
   return (
@@ -15,6 +16,7 @@ const Page = () => {
       <BelieveInUs />
       <Trusted />
       <Services />
+      <Parallax />
       <UmrahGallery />
     </>
   );

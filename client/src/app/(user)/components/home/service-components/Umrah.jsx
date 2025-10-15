@@ -17,7 +17,6 @@ const Umrah = () => {
         Umrah Packages
       </h2>
 
-      {/* Desktop Grid */}
       <div className="container hidden sm:grid xl:px-26 grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-7 pt-10 lg:pt-20">
         <Link
           href="/packagedetails"

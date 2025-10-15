@@ -39,25 +39,28 @@ const HajjGallery = () => {
   }, [isOpen]);
 
   return (
-    <section className="py-15 sm:pb-20 overflow-hidden">
+    <section className="py-15 sm:pb-20 overflow-hidden mt-5 md:mt-10">
       <div className="container mx-auto px-4 h-fit">
-        <h2 className="text-4xl md:text-5xl lg:text-6xl mb-10 text-dark font-jakarta font-semibold text-shadow-darkest border-b-4 border-brand w-fit">
-          Umrah & Hajj Gallery
+        <h2 className="text-4xl md:text-5xl lg:text-6xl mb-10 text-dark font-jakarta font-semibold text-shadow-darkest sm:border-b-4 border-brand w-fit">
+          Umrah & Hajj{" "}
+          <p className="inline-block border-b-4 border-brand sm:border-none">
+            Gallery
+          </p>
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 pt-10 md:pt-20">
-          <div className="md:hidden overflow-hidden">
+        <div className="grid grid-cols-1 md:grid-cols-2 sm:gap-5  md:pt-20">
+          <div className="md:hidden overflow-hidden h-[50dvh]">
             <Image
               src="/gallery.jpg"
               width={800}
               height={600}
               alt="Hajj Gallery Main"
-              className="rounded-xl"
+              className="rounded-xl overflow-hidden"
               loading="eager"
               priority
             />
           </div>
-          <div className="hidden md:flex overflow-hidden">
+          <div className="hidden md:flex overflow-hidden ">
             <Image
               src="/gallery-a.jpg"
               width={800}
@@ -69,11 +72,11 @@ const HajjGallery = () => {
             />
           </div>
 
-          <div className="grid grid-cols-2 gap-3">
+          <div className="grid grid-cols-2 place-items-center justify-items-center gap-3">
             {[1, 2, 3, 4].map((num) => (
               <div
                 key={num}
-                className="relative w-full h-full rounded-xl overflow-hidden cursor-pointer group"
+                className="relative w-full h-50 rounded-xl overflow-hidden cursor-pointer group"
                 onClick={() => openModal(num - 1)}
               >
                 <Image
@@ -81,7 +84,7 @@ const HajjGallery = () => {
                   alt={`Hajj Gallery ${num}`}
                   fill
                   sizes="(max-width: 768px) 100vw, 50vw"
-                  className="object-cover object-center group-hover:scale-105 transition-transform duration-300"
+                  className="object-cover object-center group-hover:scale-105 transition-transform duration-300 "
                   loading="eager"
                   priority
                 />
@@ -89,7 +92,7 @@ const HajjGallery = () => {
             ))}
 
             <div
-              className="col-span-2 relative w-full h-[60px] font-jakarta text-xl lg:text-2xl mt-2 flex items-center justify-center bg-brand text-white font-semibold rounded-xl cursor-pointer hover:bg-brand/80 transition"
+              className="col-span-2 relative w-full nav-custom-shadow h-[60px] font-jakarta text-xl lg:text-2xl text-glow flex items-center justify-center bg-brand text-white font-semibold rounded-xl cursor-pointer hover:bg-brand/80 transition"
               onClick={() => openModal(0)}
             >
               View Full Gallery

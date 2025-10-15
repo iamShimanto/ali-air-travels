@@ -44,7 +44,19 @@ const getBookings = async (req, res) => {
     if (status) filter.status = status;
 
     const bookings = await bookingModel.find(filter).populate("packageId");
-    return successResponse(res, 200, "booking fetched successfully", bookings);
+    const validBookings = bookings.filter(
+      (booking) => booking.packageId !== null
+    );
+
+    if (validBookings.length === 0) {
+      return errorResponse(res, 400, "No bookings found with valid package");
+    }
+    return successResponse(
+      res,
+      200,
+      "Booking fetched successfully",
+      validBookings
+    );
   } catch (error) {
     return errorResponse(res, 500, "booking fetched failed");
   }

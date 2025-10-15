@@ -8,7 +8,7 @@ import Image from "next/image";
 
 const BelieveInUs = () => {
   return (
-    <section className="px-3 py-15">
+    <section className="px-3 pt-15 pb-8">
       <div className="container">
         <h2 className="text-4xl md:text-5xl lg:text-6xl mb-10 text-dark font-jakarta font-semibold text-shadow-darkest border-b-4 border-brand w-fit overflow-hidden">
           Believe In Us
@@ -16,7 +16,7 @@ const BelieveInUs = () => {
 
         <Swiper
           modules={[Autoplay]}
-          spaceBetween={10}
+          spaceBetween={2}
           slidesPerView={3}
           loop={true}
           speed={2000}

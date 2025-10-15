@@ -5,8 +5,11 @@ const Trusted = () => {
   return (
     <section className="pt-10  pb-10 overflow-hidden px-3 ">
       <div className="container">
-        <h2 className="text-4xl md:text-5xl lg:text-5xl xl:text-6xl text-dark text-shadow-darkest font-jakarta font-semibold border-b-4 border-brand w-fit  mb-8">
-          Trusted by Celebrities
+        <h2 className=" text-4xl md:text-5xl lg:text-5xl xl:text-6xl text-dark text-shadow-darkest font-jakarta font-semibold  sm:border-b-4 border-brand w-fit  mb-8">
+          Trusted by{" "}
+          <p className="inline-block border-b-4 border-brand sm:border-none">
+            Celebrities
+          </p>
         </h2>
 
         <div className="sm:hidden flex gap-5 overflow-x-auto scroll-smooth snap-x snap-mandatory no-scrollbar px-1">

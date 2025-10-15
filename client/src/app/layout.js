@@ -3,6 +3,7 @@ import "./globals.css";
 import Nav from "./(user)/components/common/Nav";
 import BackToTop from "./(user)/components/common/BackToTop";
 import Footer from "./(user)/components/common/Footer";
+import FloatingWhatsapp from "./(user)/components/common/FloatingWhatsapp";
 
 const plusJakarta = Plus_Jakarta_Sans({
   variable: "--font-plus-jakarta",
@@ -23,13 +24,10 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${plusJakarta.variable} ${roboto.variable} bg-no-repeat bg-cover bg-left md:bg-center antialiased`}
-        style={{
-          backgroundImage: "url('/body-bg.jpg')",
-          backgroundAttachment: "fixed",
-        }}
+        className={`${plusJakarta.variable} ${roboto.variable}  antialiased`}
       >
         <Nav />
+        <FloatingWhatsapp />
         <BackToTop />
         {children}
         <Footer />

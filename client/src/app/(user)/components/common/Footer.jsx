@@ -7,8 +7,7 @@ import { FaFacebookF, FaInstagram, FaYoutube } from "react-icons/fa";
 const Footer = () => {
   return (
     <footer className="m-3 md:m-5 mb-5 md:mb-10 nav-custom-shadow rounded-2xl bg-white border-t border-gray-200 text-dark/80 text-sm">
-      <div className="container mx-auto  px-6 py-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 lg:justify-items-center gap-8">
-        {/* Logo + Address */}
+      <div className="container mx-auto pt-5 sm:pt-20 pb-5  px-4 pt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 lg:justify-items-center gap-8">
         <div className="space-y-4">
           <Image
             src="/footer.png"
@@ -26,7 +25,6 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Umrah */}
         <div>
           <h3 className="font-semibold mb-5  text-xl md:text-2xl text-dark/90 text-shadow-darker font-jakarta border-b-2 border-brand w-fit">
             Umrah
@@ -55,7 +53,6 @@ const Footer = () => {
           </ul>
         </div>
 
-        {/* Syarikat */}
         <div>
           <h3 className="font-semibold mb-5 text-dark/90 text-shadow-darker text-xl md:text-2xl font-jakarta border-b-2 border-brand w-fit">
             Hajj
@@ -79,49 +76,30 @@ const Footer = () => {
           </ul>
         </div>
 
-        {/* Mobile App + Social */}
         <div>
-          <h3 className="font-semibold mb-5  font-jakarta text-xl md:text-2xl text-dark/90 text-shadow-darker border-b-2 border-brand w-fit">
-            Social Media
-          </h3>
-          <div className="flex items-center gap-4">
-            <Link href="#">
-              <FaFacebookF
-                size={18}
-                className="hover:text-brand transition-all"
-              />
-            </Link>
-            <Link href="#">
-              <FaInstagram
-                size={18}
-                className="hover:text-brand transition-all"
-              />
-            </Link>
-            <Link href="#">
-              <FaYoutube
-                size={18}
-                className="hover:text-brand transition-all"
-              />
-            </Link>
-          </div>
+          <Link
+            href={"/"}
+            className="flex items-center  gap-1 px-3 py-2.5 bg-[#1877F2] rounded-xl justify-center  nav-custom-shadow text-light text-2xl sm:text-xl text-glow "
+          >
+            visit our facebook <FaFacebookF className="text-md" />
+          </Link>
         </div>
       </div>
 
-      {/* Bottom Bar */}
       <div className="border-t border-gray-200 mt-6">
         <div className="container mx-auto px-6 py-6 text-xs text-gray-500 leading-6">
           <p>
             ©2025 Ali Air Travels & Tours. All rights reserved. Licensed Travel
             Agency. Use of this website constitutes acceptance of our Terms &
             Conditions and Privacy Policy. This website is developed by{" "}
-            <a
-              href="https://weblaa.vercel.app"
+            <Link
+              href="https://weblaa.com"
               target="_blank"
               rel="noopener noreferrer"
               className="text-brand hover:underline"
             >
               Weblaa
-            </a>
+            </Link>
           </p>
         </div>
       </div>

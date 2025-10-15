@@ -23,11 +23,11 @@ const Nav = () => {
 
   return (
     <>
-      <nav className="mx-1 sm:mx-5 px-2 pt-3 pb-4 border-b border-dark/10 relative">
+      <nav className="bg-light border-b-4 border-b-brand nav-custom-shadow mx-3 sm:mx-5 px-2 pt-1 pb-2 sm:pt-2 sm:pb-3 mt-2 rounded-2xl border-b border-dark/10 relative">
         <div className="container">
           <div className="flex items-center justify-between h-16">
             <Link href={"/"}>
-              <div className="relative w-46 h-16">
+              <div className="relative w-40 sm:w-46 h-13 sm:h-16">
                 <Image
                   src="/second-logo.png"
                   alt="Second brand logo"
@@ -142,14 +142,13 @@ const Nav = () => {
                 aria-label="Toggle menu"
                 className="cursor-pointer outline-none"
               >
-                <PiDotsThreeOutlineFill className="text-[32px] text-dark" />
+                <PiDotsThreeOutlineFill className="text-[32px] text-dark mt-3 mr-2" />
               </button>
             </div>
           </div>
         </div>
       </nav>
 
-      {/* Mobile menu */}
       <div
         className={`fixed inset-0 z-50 flex justify-end transition-all duration-300 ${
           menuOpen ? "visible" : "invisible"
@@ -163,7 +162,7 @@ const Nav = () => {
         ></div>
 
         <div
-          className={`relative h-full w-[80%] max-w-xs bg-white shadow-2xl p-6 transform transition-transform duration-300 ease-in-out ${
+          className={`relative h-full w-[80%] max-w-xs bg-white shadow-2xl border-l-4 border-brand rounded-l-4xl p-6 transform transition-transform duration-300 ease-in-out ${
             menuOpen ? "translate-x-0" : "translate-x-full"
           }`}
         >
@@ -236,7 +235,6 @@ const Nav = () => {
         </div>
       </div>
 
-      {/* Modals */}
       <AuthModal
         isOpen={showAuthModal}
         onClose={() => setShowAuthModal(false)}
