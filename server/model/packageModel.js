@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const packageSchema = new mongoose.Schema(
   {
     type: { type: String, enum: ["hajj", "umrah"], required: true },
-    category: { type: String, enum: ["regular", "premium"], required: true },
+    category: { type: String, required: true },
 
     title_en: { type: String, required: true },
     title_bn: { type: String, required: true },

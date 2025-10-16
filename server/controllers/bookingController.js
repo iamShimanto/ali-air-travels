@@ -86,7 +86,7 @@ const updateBookingStatus = async (req, res) => {
       return errorResponse(res, 400, "Invalid status");
     }
 
-    const updated = await Booking.findByIdAndUpdate(
+    const updated = await bookingModel.findByIdAndUpdate(
       id,
       { status },
       { new: true }

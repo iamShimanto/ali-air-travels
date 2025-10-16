@@ -146,7 +146,7 @@ const Umrah = () => {
         </Link>
       </div>
 
-      {/* Mobile Swiper */}
+   
       <div className="container sm:hidden pt-10 relative">
         <Swiper
           modules={[Autoplay, Pagination, Navigation]}

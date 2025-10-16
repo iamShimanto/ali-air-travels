@@ -25,6 +25,8 @@ const allPackage = async (req, res) => {
 
     const data = packages.map((pkg) => ({
       id: pkg._id,
+      type: pkg.type,
+      category: pkg.category,
       title: lang === "bn" ? pkg.title_bn : pkg.title_en,
       price: lang === "bn" ? pkg.price_bn : pkg.price_en,
       duration: pkg.duration || null,
@@ -53,7 +55,7 @@ const allPackage = async (req, res) => {
 const getSinglePackage = async (req, res) => {
   try {
     const { id } = req.params;
-    const lang = req.query.lang || "en";
+    const lang = req.query.lang;
 
     const pkg = await packageModel.findById(id);
     if (!pkg) {
@@ -61,6 +63,8 @@ const getSinglePackage = async (req, res) => {
     }
     const data = {
       id: pkg._id,
+      type: pkg.type,
+      category: pkg.category,
       title: lang === "bn" ? pkg.title_bn : pkg.title_en,
       price: lang === "bn" ? pkg.price_bn : pkg.price_en,
       duration: pkg.duration || null,

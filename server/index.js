@@ -7,9 +7,9 @@ const cookieParser = require("cookie-parser");
 const compression = require("compression");
 const cors = require("cors");
 const authRoute = require("./routes/authRoute");
-const packageRoute = require("./routes/packageRoute")
-const bookingRoute = require("./routes/bookingRoute")
-
+const packageRoute = require("./routes/packageRoute");
+const bookingRoute = require("./routes/bookingRoute");
+const overviewRoute = require("./routes/overviewRoute");
 
 // ======== dbconfig
 dbConfig();
@@ -21,15 +21,21 @@ app.use(cookieParser());
 app.use(compression());
 app.use(
   cors({
-    origin: ["http://localhost:5173", "http://localhost:3000"],
+    origin: [
+      "http://localhost:5173",
+      "http://localhost:3000",
+      process.env.CLIENT_URL,
+      process.env.ADMIN_URL,
+    ],
     credentials: true,
   })
 );
 
 // =========== routes
 app.use("/api/auth", authRoute);
-app.use("/api/package", packageRoute)
-app.use("/api/booking", bookingRoute)
+app.use("/api/package", packageRoute);
+app.use("/api/booking", bookingRoute);
+app.use("/api", overviewRoute);
 
 app.get("/", (req, res) => {
   res.send("server is running");

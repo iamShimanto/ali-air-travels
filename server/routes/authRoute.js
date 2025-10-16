@@ -16,12 +16,16 @@ router.post("/send-verify-code", verifyToken,  sendVerifyCode)
 // ========== verify code
 router.post("/verify-code", verifyToken, verifyCode)
 
+// ========= all user
 router.get("/all-users", verifyToken, verifyAdmin, allUsers);
 
+// ========== get a single user
 router.get("/user/:id", verifyToken, verifyAdmin, getSingleUser);
 
+// =========== update user role
 router.put("/user/:id", verifyToken, verifyAdmin, userRoleUpdate);
 
+// ========= get user profile
 router.get("/profile", verifyToken, getProfile);
 
 
