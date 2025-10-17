@@ -4,6 +4,8 @@ import Nav from "./(user)/components/common/Nav";
 import BackToTop from "./(user)/components/common/BackToTop";
 import Footer from "./(user)/components/common/Footer";
 import FloatingWhatsapp from "./(user)/components/common/FloatingWhatsapp";
+import AOSWrapper from "./(user)/components/common/AosWrapper";
+import "aos/dist/aos.css";
 
 const plusJakarta = Plus_Jakarta_Sans({
   variable: "--font-plus-jakarta",
@@ -26,11 +28,14 @@ export default function RootLayout({ children }) {
       <body
         className={`${plusJakarta.variable} ${roboto.variable}  antialiased`}
       >
-        <Nav />
-        <FloatingWhatsapp />
-        <BackToTop />
-        {children}
-        <Footer />
+        <AOSWrapper>
+          {" "}
+          <Nav />
+          <FloatingWhatsapp />
+          <BackToTop />
+          {children}
+          <Footer />
+        </AOSWrapper>
       </body>
     </html>
   );

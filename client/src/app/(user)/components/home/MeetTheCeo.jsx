@@ -18,19 +18,35 @@ const MeetTheCeo = () => {
           </div>
 
           <div>
-            <h2 className="text-4xl  font-jakarta font-semibold w-fit text-dark text-shadow-darkest  sm:border-b-4  border-brand pt-15 sm:pt-0">
+            <h2
+              data-aos="fade-up"
+              data-aos-duration="800"
+              className="text-4xl  font-jakarta font-semibold w-fit text-dark text-shadow-darkest  sm:border-b-4  border-brand pt-15 sm:pt-0"
+            >
               Meet the{" "}
               <p className="inline-block border-b-4 border-brand sm:border-none">
                 Proprietor,
               </p>
             </h2>
-            <h3 className="mt-5 text-3xl font-jakarta font-semibold text-dark/90 mb-2">
+            <h3
+              data-aos="fade-up"
+              data-aos-duration="1200"
+              className="mt-5 text-3xl font-jakarta font-semibold text-dark/90 mb-2"
+            >
               Hossian Ahmed Mazumdar
             </h3>
-            <h4 className="text-xl font-roboto text-dark/80 border-b border-brand rounded-xl w-fit">
+            <h4
+              data-aos="fade-up"
+              data-aos-duration="1500"
+              className="text-xl font-roboto text-dark/80 border-b border-brand rounded-xl w-fit"
+            >
               Ali Air Travels
             </h4>
-            <p className="mt-3 font-roboto text-lg max-w-xl text-gray-600 leading-relaxed pt-4">
+            <p
+              data-aos="fade-up"
+              data-aos-duration="2000"
+              className="mt-3 font-roboto text-lg max-w-xl text-gray-600 leading-relaxed pt-4"
+            >
               Mr. Hossian Ahmed Mazumdar is the visionary leader behind our
               success, bringing innovation and dedication to every aspect of our
               company.

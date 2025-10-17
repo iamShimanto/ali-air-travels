@@ -17,8 +17,12 @@ const Certification = () => {
   ];
 
   return (
-    <section className="container  px-3 pt-11 md:pt-10 pb-30 overflow-hidden">
-      <h2 className="text-4xl md:text-5xl lg:text-5xl mb-15 xl:text-6xl text-dark text-shadow-darkest font-jakarta font-semibold border-b-3 border-brand w-fit  pb-3">
+    <section className="container  px-3 sm:pt-11 md:pt-10 pb-30 overflow-hidden">
+      <h2
+        data-aos="fade-right"
+        data-aos-duration="1200"
+        className="text-4xl md:text-5xl lg:text-5xl mb-15 xl:text-6xl text-dark text-shadow-darkest font-jakarta font-semibold border-b-3 border-brand w-fit  pb-3"
+      >
         Certification
       </h2>
       <div className=" grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">

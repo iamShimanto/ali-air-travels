@@ -13,7 +13,10 @@ import "swiper/css/navigation";
 const Hajj = () => {
   return (
     <section className="pt-15 lg:pt-28 pb-10">
-      <h2 className="container text-4xl md:text-5xl lg:text-6xl mb-10 text-dark font-jakarta font-semibold text-shadow-darkest border-b-4 border-brand w-fit">
+      <h2
+        data-aos="fade-right"
+        className="container text-4xl md:text-5xl lg:text-6xl mb-10 text-dark font-jakarta font-semibold text-shadow-darkest border-b-4 border-brand w-fit"
+      >
         Hajj Packages
       </h2>
 
@@ -26,8 +29,15 @@ const Hajj = () => {
             className="relative group h-[25dvh] sm:h-[35dvh]  bg-center bg-no-repeat bg-cover rounded-t-lg sm:rounded-t-3xl overflow-hidden"
             style={{ backgroundImage: "url('/hajj-1.jpg')" }}
           >
-            <div className="absolute inset-0 backdrop-blur-none group-hover:backdrop-blur-sm group-hover:bg-black/40 transition-all duration-300 z-[3]" />
-            <div className="absolute inset-0 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 text-white z-[4]">
+            <div className="absolute inset-0 bg-black/40 z-[1] transition-all duration-300" />
+
+            <div className="absolute inset-0 group-hover:backdrop-blur-sm group-hover:bg-black/20 transition-all duration-300 z-[2]" />
+
+            <h2 className="absolute inset-0 flex justify-center items-center text-center text-2xl sm:text-3xl md:text-5xl text-glow font-jakarta font-semibold text-light text-shadow-darker z-[4] px-3">
+              Hajj Regular
+            </h2>
+
+            <div className="absolute inset-0 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 text-white z-[5] bg-black/10 backdrop-blur-sm">
               <FiSearch className="text-4xl mb-2" />
               <p className="text-xl lg:text-2xl">explore more</p>
             </div>
@@ -58,8 +68,15 @@ const Hajj = () => {
             className="relative group h-[25dvh] sm:h-[35dvh] bg-center bg-no-repeat bg-cover rounded-t-lg sm:rounded-t-3xl overflow-hidden"
             style={{ backgroundImage: "url('/hajj-2.jpg')" }}
           >
-            <div className="absolute inset-0 backdrop-blur-none group-hover:backdrop-blur-sm group-hover:bg-black/40 transition-all duration-300 z-[3]" />
-            <div className="absolute inset-0 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 text-white z-[4]">
+            <div className="absolute inset-0 bg-black/40 z-[1] transition-all duration-300" />
+
+            <div className="absolute inset-0 group-hover:backdrop-blur-sm group-hover:bg-black/20 transition-all duration-300 z-[2]" />
+
+            <h2 className="absolute inset-0 flex justify-center items-center text-center text-2xl sm:text-3xl md:text-5xl text-glow font-jakarta font-semibold text-light text-shadow-darker z-[4] px-3">
+              Hajj Regular
+            </h2>
+
+            <div className="absolute inset-0 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 text-white z-[5] bg-black/10 backdrop-blur-sm">
               <FiSearch className="text-4xl mb-2" />
               <p className="text-xl lg:text-2xl">explore more</p>
             </div>
@@ -90,8 +107,15 @@ const Hajj = () => {
             className="relative group h-[25dvh] sm:h-[35dvh] bg-center bg-no-repeat bg-cover rounded-t-lg sm:rounded-t-3xl overflow-hidden"
             style={{ backgroundImage: "url('/hajj-3.jpg')" }}
           >
-            <div className="absolute inset-0 backdrop-blur-none group-hover:backdrop-blur-sm group-hover:bg-black/40 transition-all duration-300 z-[3]" />
-            <div className="absolute inset-0 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 text-white z-[4]">
+            <div className="absolute inset-0 bg-black/40 z-[1] transition-all duration-300" />
+
+            <div className="absolute inset-0 group-hover:backdrop-blur-sm group-hover:bg-black/20 transition-all duration-300 z-[2]" />
+
+            <h2 className="absolute inset-0 flex justify-center items-center text-center text-2xl sm:text-3xl md:text-5xl text-glow font-jakarta font-semibold text-light text-shadow-darker z-[4] px-3">
+              Hajj Regular
+            </h2>
+
+            <div className="absolute inset-0 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 text-white z-[5] bg-black/10 backdrop-blur-sm">
               <FiSearch className="text-4xl mb-2" />
               <p className="text-xl lg:text-2xl">explore more</p>
             </div>
@@ -121,8 +145,15 @@ const Hajj = () => {
             className="relative group h-[25dvh] sm:h-[35dvh] bg-center bg-no-repeat bg-cover rounded-t-lg sm:rounded-t-3xl overflow-hidden"
             style={{ backgroundImage: "url('/hajj-4.jpg')" }}
           >
-            <div className="absolute inset-0 backdrop-blur-none group-hover:backdrop-blur-sm group-hover:bg-black/40 transition-all duration-300 z-[3]" />
-            <div className="absolute inset-0 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 text-white z-[4]">
+            <div className="absolute inset-0 bg-black/40 z-[1] transition-all duration-300" />
+
+            <div className="absolute inset-0 group-hover:backdrop-blur-sm group-hover:bg-black/20 transition-all duration-300 z-[2]" />
+
+            <h2 className="absolute inset-0 flex justify-center items-center text-center text-2xl sm:text-3xl md:text-5xl text-glow font-jakarta font-semibold text-light text-shadow-darker z-[4] px-3">
+              Hajj Exclusive
+            </h2>
+
+            <div className="absolute inset-0 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 text-white z-[5] bg-black/10 backdrop-blur-sm">
               <FiSearch className="text-4xl mb-2" />
               <p className="text-xl lg:text-2xl">explore more</p>
             </div>
@@ -162,21 +193,29 @@ const Hajj = () => {
           <SwiperSlide>
             <Link
               href="/packagedetails"
-              className="flex flex-col  border-4 border-brand rounded-4xl"
+              className="flex flex-col border-4 border-brand rounded-4xl"
             >
               <div
                 className="relative h-[40dvh] sm:h-[50dvh] bg-center bg-no-repeat bg-cover rounded-t-3xl overflow-hidden"
                 style={{ backgroundImage: "url('/hajj-1.jpg')" }}
-              ></div>
-              <div className="flex bg-light flex-col gap-3 rounded-b-3xl pt-2 px-3 pb-4  ">
+              >
+                <div className="absolute inset-0 bg-black/20 z-[1]" />
+
+                <h2 className="absolute inset-0 flex justify-center items-center text-5xl sm:text-4xl md:text-5xl text-glow font-jakarta font-semibold text-light text-shadow-darker z-[2] bg-black/30 backdrop-blur-xs rounded-t-3xl text-center">
+                  Hajj
+                  <br /> Regular
+                </h2>
+              </div>
+
+              <div className="flex bg-light flex-col gap-3 rounded-b-3xl pt-2 px-3 pb-4">
                 <h2 className="text-2xl font-jakarta font-semibold text-dark/90 text-shadow-darker">
                   Hajj Regular
                 </h2>
                 <div className="text-sm flex flex-wrap gap-2 pb-2">
-                  <p className="px-2 py-1 bg-brand text-light text-shadow-darkest nav-custom-shadow font-roboto w-fit rounded-2xl ">
+                  <p className="px-2 py-1 bg-brand text-light text-shadow-darkest nav-custom-shadow font-roboto w-fit rounded-2xl">
                     Cheapest
                   </p>
-                  <p className="px-2 py-1 bg-brand text-light text-shadow-darkest nav-custom-shadow font-roboto w-fit rounded-2xl ">
+                  <p className="px-2 py-1 bg-brand text-light text-shadow-darkest nav-custom-shadow font-roboto w-fit rounded-2xl">
                     Full Board
                   </p>
                 </div>
@@ -196,7 +235,14 @@ const Hajj = () => {
               <div
                 className="relative h-[40dvh] sm:h-[50dvh] bg-center bg-no-repeat bg-cover rounded-t-3xl overflow-hidden"
                 style={{ backgroundImage: "url('/hajj-2.jpg')" }}
-              ></div>
+              >
+                <div className="absolute inset-0 bg-black/20 z-[1]" />
+
+                <h2 className="absolute inset-0 flex justify-center items-center text-5xl sm:text-4xl md:text-5xl text-glow font-jakarta font-semibold text-light text-shadow-darker z-[2] bg-black/30 backdrop-blur-xs rounded-t-3xl text-center">
+                  Hajj
+                  <br /> Special
+                </h2>
+              </div>
               <div className="flex bg-light flex-col gap-3 rounded-b-3xl pt-2 px-3 pb-4  ">
                 <h2 className="text-2xl font-jakarta font-semibold text-dark/90 text-shadow-darker">
                   Hajj Special
@@ -225,7 +271,14 @@ const Hajj = () => {
               <div
                 className="relative h-[40dvh] sm:h-[50dvh] bg-center bg-no-repeat bg-cover rounded-t-3xl overflow-hidden"
                 style={{ backgroundImage: "url('/hajj-3.jpg')" }}
-              ></div>
+              >
+                <div className="absolute inset-0 bg-black/20 z-[1]" />
+
+                <h2 className="absolute inset-0 flex justify-center items-center text-5xl sm:text-4xl md:text-5xl text-glow font-jakarta font-semibold text-light text-shadow-darker z-[2] bg-black/30 backdrop-blur-xs rounded-t-3xl text-center">
+                  Hajj
+                  <br /> Premium
+                </h2>
+              </div>
               <div className="flex bg-light flex-col gap-3 rounded-b-3xl pt-2 px-3 pb-4  ">
                 <h2 className="text-2xl font-jakarta font-semibold text-dark/90 text-shadow-darker">
                   Hajj Premium
@@ -254,7 +307,14 @@ const Hajj = () => {
               <div
                 className="relative h-[40dvh] sm:h-[50dvh] bg-center bg-no-repeat bg-cover rounded-t-3xl overflow-hidden"
                 style={{ backgroundImage: "url('/hajj-4.jpg')" }}
-              ></div>
+              >
+                <div className="absolute inset-0 bg-black/20 z-[1]" />
+
+                <h2 className="absolute inset-0 flex justify-center items-center text-5xl sm:text-4xl md:text-5xl text-glow font-jakarta font-semibold text-light text-shadow-darker z-[2] bg-black/30 backdrop-blur-xs rounded-t-3xl text-center">
+                  Hajj
+                  <br /> Exclusive
+                </h2>
+              </div>
               <div className="flex bg-light flex-col gap-3 rounded-b-3xl pt-2 px-3 pb-4  ">
                 <h2 className="text-2xl font-jakarta font-semibold text-dark/90 text-shadow-darker">
                   Hajj Exclusive

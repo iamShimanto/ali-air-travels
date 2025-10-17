@@ -57,14 +57,27 @@ const Banner = () => {
           <div className="absolute  flex items-center justify-center z-20">
             <div className=" px-6 py-4 rounded-md">
               <h1 className="max-w-3xl text-center text-3xl sm:text-5xl md:text-6xl xl:text-7xl font-jakarta font-semibold text-white text-glow text-shadow-darker">
-                <span className="text-4xl sm:text-5xl md:text-6xl lg:text-6xl xl:text-7xl">
+                <span
+                  data-aos="fade-right"
+                  className="inline-block text-4xl sm:text-5xl md:text-6xl lg:text-6xl xl:text-7xl"
+                >
                   Trusted
                 </span>{" "}
-                Hajj & Umrah Agency In
+                <span data-aos="fade-left" className="inline-block">
+                  Hajj & Umrah Agency In
+                </span>
                 <br />
-                <span className="border-b-4 border-brand">Bangladesh</span>
+                <span
+                  data-aos="fade-right"
+                  className="inline-block  border-b-4 border-brand"
+                >
+                  Bangladesh
+                </span>
               </h1>
-              <button className="scale-97 mt-10 sm:mt-20 w-fit mx-auto cursor-pointer bg-brand px-4 sm:px-4 py-1.5 sm:py-3 font-jakarta font-semibold text-light text-glow text-lg sm:text-2xl nav-custom-shadow rounded-xl  flex justify-center items-center transition-all hover:scale-100">
+              <button
+                data-aos="fade-up"
+                className="scale-97 mt-10 sm:mt-20 w-fit mx-auto cursor-pointer bg-brand px-4 sm:px-4 py-1.5 sm:py-3 font-jakarta font-semibold text-light text-glow text-lg sm:text-2xl nav-custom-shadow rounded-xl  flex justify-center items-center transition-all hover:scale-100"
+              >
                 explore more
               </button>
             </div>

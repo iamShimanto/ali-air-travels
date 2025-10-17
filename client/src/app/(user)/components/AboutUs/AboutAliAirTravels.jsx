@@ -7,10 +7,16 @@ const AboutAliAirTravels = () => {
     <section className="px-3 py-10 md:pt-20 pb-0 overflow-hidden">
       <div className="container">
         <div>
-          <h2 className="mx-auto text-4xl md:text-5xl lg:text-6xl mb-10 text-dark font-jakarta font-semibold text-shadow-darkest border-b-4 border-brand w-fit">
+          <h2
+            data-aos="fade-right"
+            className="mx-auto text-4xl md:text-5xl lg:text-6xl mb-10 text-dark font-jakarta font-semibold text-shadow-darkest border-b-4 border-brand w-fit"
+          >
             About Us
           </h2>
-          <p className="text-lg md:text-xl text-dark font-jakarta text-shadow-dark text-center max-w-3xl mx-auto">
+          <p
+            data-aos="fade-up"
+            className="text-lg md:text-xl text-dark font-jakarta text-shadow-dark text-center max-w-3xl mx-auto"
+          >
             {" "}
             Ali Air Travels & Tours , a trusted business support Muslim
             communities around the bangladesh by providing unparalleled access
@@ -32,21 +38,37 @@ const AboutAliAirTravels = () => {
             </div>
           </div>
           <div>
-            <h3 className="text-2xl md:text-3xl pt-5 text-dark/90 font-jakarta text-shadow-darker border-b-2 border-brand  w-fit">
+            <h3
+              data-aos="fade-up"
+              data-aos-duration="1000"
+              className="text-2xl md:text-3xl pt-5 text-dark/90 font-jakarta text-shadow-darker border-b-2 border-brand  w-fit"
+            >
               FROM THE PROPRIETOR
             </h3>
-            <p className="text-lg md:text-xl pt-5 text-dark/80 font-jakarta text-shadow-darker  max-w-md leading-10">
+            <p
+              data-aos="fade-up"
+              data-aos-duration="1600"
+              className="text-lg md:text-xl pt-5 text-dark/80 font-jakarta text-shadow-darker  max-w-md leading-10"
+            >
               "It's for the Ummah. Our business is to bring ibadah and education
               closer to the Ummah as a community and managing the guest of Allah
               SWT"
             </p>
-            <h4 className="text-xl md:text-2xl pt-5 text-dark/90 font-jakarta text-shadow-darker ">
+            <h4
+              data-aos="fade-up"
+              data-aos-duration="1800"
+              className="text-xl md:text-2xl pt-5 text-dark/90 font-jakarta text-shadow-darker "
+            >
               -lorem lorem
             </h4>
           </div>
         </div>
         <div className="w-full mx-auto text-center pt-15 gap-5">
-          <div className="flex flex-wrap items-center justify-center text-4xl font-jakarta font-semibold text-dark/80 pb-2">
+          <div
+            data-aos="fade-right"
+            data-aos-duration="1200"
+            className="flex flex-wrap items-center justify-center text-4xl font-jakarta font-semibold text-dark/80 pb-2"
+          >
             THE
             <Link href={"/"}>
               <div className="relative w-46 h-16 ">
@@ -60,13 +82,17 @@ const AboutAliAirTravels = () => {
             </Link>{" "}
             VISION & MISSION
           </div>{" "}
-          <p className="text-xl text-dark/80 font-roboto text-shadow-dark text-center max-w-3xl mx-auto">
+          <p
+            data-aos="fade-up"
+            data-aos-duration="1200"
+            className="text-xl text-dark/80 font-roboto text-shadow-dark text-center max-w-3xl mx-auto pt-8"
+          >
             Muslim lifestyle made easier with the all in one shariah compliant
             platform
           </p>
         </div>
         <div className="py-30 grid  grid-cols-2 md:grid-cols-4 gap-5">
-          <div>
+          <div data-aos="fade-up" data-aos-duration="1200">
             <div className="relative w-full h-30 md:h-50 ">
               <Image
                 src="/vision-2.png"
@@ -80,7 +106,7 @@ const AboutAliAirTravels = () => {
               for Muslim friendly Product & Services
             </p>
           </div>
-          <div>
+          <div data-aos="fade-up" data-aos-duration="1600">
             <div className="relative w-full h-30 md:h-50 ">
               <Image
                 src="/vision-3.png"
@@ -94,7 +120,7 @@ const AboutAliAirTravels = () => {
               through digitalization
             </p>
           </div>
-          <div>
+          <div data-aos="fade-up" data-aos-duration="2000">
             <div className="relative w-full h-30 md:h-50 ">
               <Image
                 src="/vision-4.png"
@@ -108,7 +134,7 @@ const AboutAliAirTravels = () => {
               lifetime
             </p>
           </div>
-          <div>
+          <div data-aos="fade-up" data-aos-duration="2400">
             <div className="relative w-full h-30 md:h-50 ">
               <Image
                 src="/vision-1.png"

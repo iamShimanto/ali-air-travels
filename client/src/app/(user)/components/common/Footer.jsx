@@ -7,8 +7,8 @@ import { FaFacebookF, FaInstagram, FaYoutube } from "react-icons/fa";
 const Footer = () => {
   return (
     <footer className="m-3 md:m-5 mb-5 md:mb-10 nav-custom-shadow rounded-2xl bg-white border-t border-gray-200 text-dark/80 text-sm">
-      <div className="container mx-auto pt-5 sm:pt-20 pb-5  px-4 pt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 lg:justify-items-center gap-8">
-        <div className="space-y-4">
+      <div className="container mx-auto  sm:pt-20 pb-5  px-4 pt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 lg:justify-items-center gap-8">
+        <div data-aos="fade-up" data-aos-duration="8000" className="space-y-4">
           <Image
             src="/footer.png"
             alt="Ikhlas Logo"
@@ -25,7 +25,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div>
+        <div data-aos="fade-up" data-aos-duration="1400">
           <h3 className="font-semibold mb-5  text-xl md:text-2xl text-dark/90 text-shadow-darker font-jakarta border-b-2 border-brand w-fit">
             Umrah
           </h3>
@@ -53,7 +53,7 @@ const Footer = () => {
           </ul>
         </div>
 
-        <div>
+        <div data-aos="fade-up" data-aos-duration="2000">
           <h3 className="font-semibold mb-5 text-dark/90 text-shadow-darker text-xl md:text-2xl font-jakarta border-b-2 border-brand w-fit">
             Hajj
           </h3>
@@ -76,10 +76,10 @@ const Footer = () => {
           </ul>
         </div>
 
-        <div>
+        <div data-aos="fade-up" data-aos-duration="2500">
           <Link
             href={"/"}
-            className="flex items-center  gap-1 px-3 py-2.5 bg-[#1877F2] rounded-xl justify-center  nav-custom-shadow text-light text-2xl sm:text-xl text-glow "
+            className="flex items-center  gap-1 px-3 py-2.5 bg-[#1877F2] rounded-xl justify-center  nav-custom-shadow text-light text-2xl sm:text-xl text-glow transition-all hover:scale-105"
           >
             visit our facebook <FaFacebookF className="text-md" />
           </Link>

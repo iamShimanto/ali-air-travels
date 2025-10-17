@@ -10,7 +10,10 @@ const BelieveInUs = () => {
   return (
     <section className="px-3 pt-15 pb-8">
       <div className="container">
-        <h2 className="text-4xl md:text-5xl lg:text-6xl mb-10 text-dark font-jakarta font-semibold text-shadow-darkest border-b-4 border-brand w-fit overflow-hidden">
+        <h2
+          data-aos="fade-right"
+          className="text-4xl md:text-5xl lg:text-6xl mb-10 text-dark font-jakarta font-semibold text-shadow-darkest border-b-4 border-brand w-fit overflow-hidden"
+        >
           Believe In Us
         </h2>
 

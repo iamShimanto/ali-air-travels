@@ -41,7 +41,11 @@ const HajjGallery = () => {
   return (
     <section className="py-15 sm:pb-20 overflow-hidden mt-5 md:mt-10">
       <div className="container mx-auto px-4 h-fit">
-        <h2 className="text-4xl md:text-5xl lg:text-6xl mb-10 text-dark font-jakarta font-semibold text-shadow-darkest sm:border-b-4 border-brand w-fit">
+        <h2
+          data-aos="fade-right"
+          data-aos-duration="1600"
+          className="text-4xl md:text-5xl lg:text-6xl mb-10 text-dark font-jakarta font-semibold text-shadow-darkest sm:border-b-4 border-brand w-fit"
+        >
           Umrah & Hajj{" "}
           <p className="inline-block border-b-4 border-brand sm:border-none">
             Gallery

@@ -175,7 +175,7 @@ const Nav = () => {
 
           <div className="flex flex-col h-full justify-between pt-10">
             <ul className="space-y-4 mt-10 font-jakarta">
-              <li>
+              <li data-aos="fade-left" data-aos-duration="1600">
                 <Link
                   href="/"
                   onClick={() => setMenuOpen(false)}
@@ -184,7 +184,7 @@ const Nav = () => {
                   <span>home</span> <IoHomeOutline className="shadow-2xl" />
                 </Link>
               </li>
-              <li>
+              <li data-aos="fade-left" data-aos-duration="1800">
                 <Link
                   href="/aboutus"
                   onClick={() => setMenuOpen(false)}
@@ -194,7 +194,7 @@ const Nav = () => {
                 </Link>
               </li>
 
-              <li>
+              <li data-aos="fade-left" data-aos-duration="2100">
                 <Link
                   href="/mybooking"
                   onClick={() => setMenuOpen(false)}
@@ -205,6 +205,8 @@ const Nav = () => {
               </li>
               <li>
                 <button
+                  data-aos="fade-left"
+                  data-aos-duration="2400"
                   onClick={() => {
                     setShowAuthModal(true);
                     setMenuOpen(false);
