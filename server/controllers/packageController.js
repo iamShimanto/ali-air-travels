@@ -29,7 +29,7 @@ const allPackage = async (req, res) => {
       category: pkg.category,
       title: lang === "bn" ? pkg.title_bn : pkg.title_en,
       price: lang === "bn" ? pkg.price_bn : pkg.price_en,
-      duration: pkg.duration || null,
+      duration: lang === "bn" ? pkg.duration_bn : pkg.duration_en,
       accommodation:
         lang === "bn" ? pkg.accommodation_bn : pkg.accommodation_en,
       meal: lang === "bn" ? pkg.meal_bn : pkg.meal_en,

@@ -10,7 +10,8 @@ const packageSchema = new mongoose.Schema(
 
     price_en: { type: String, required: true },
     price_bn: { type: String, required: true },
-    duration: { type: String },
+    duration_en: { type: String },
+    duration_bn: { type: String },
 
     accommodation_en: { type: String, required: true },
     accommodation_bn: { type: String, required: true },

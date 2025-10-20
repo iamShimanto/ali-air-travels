@@ -8,6 +8,7 @@ import AOSWrapper from "./(user)/components/common/AosWrapper";
 import "aos/dist/aos.css";
 import { LanguageProvider } from "@/context/LanguageContext";
 import { cookies } from "next/headers";
+import baseUrl from "./baseUrl";
 
 const plusJakarta = Plus_Jakarta_Sans({
   variable: "--font-plus-jakarta",
@@ -26,7 +27,8 @@ export const metadata = {
 
 export default async function RootLayout({ children }) {
   const cookieStore = await cookies();
-  const lang = cookieStore.get("lang")?.value || "en";
+  const lang = await cookieStore.get("lang")?.value || "en";
+
 
   return (
     <html lang="en">
