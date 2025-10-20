@@ -6,6 +6,8 @@ import Footer from "./(user)/components/common/Footer";
 import FloatingWhatsapp from "./(user)/components/common/FloatingWhatsapp";
 import AOSWrapper from "./(user)/components/common/AosWrapper";
 import "aos/dist/aos.css";
+import { LanguageProvider } from "@/context/LanguageContext";
+import { cookies } from "next/headers";
 
 const plusJakarta = Plus_Jakarta_Sans({
   variable: "--font-plus-jakarta",
@@ -22,19 +24,23 @@ export const metadata = {
   description: "ali air travels",
 };
 
-export default function RootLayout({ children }) {
+export default async function RootLayout({ children }) {
+  const cookieStore = await cookies();
+  const lang = cookieStore.get("lang")?.value || "en";
+
   return (
     <html lang="en">
       <body
-        className={`${plusJakarta.variable} ${roboto.variable}  antialiased`}
+        className={`${plusJakarta.variable} ${roboto.variable} antialiased`}
       >
         <AOSWrapper>
-          {" "}
-          <Nav />
-          <FloatingWhatsapp />
-          <BackToTop />
-          {children}
-          <Footer />
+          <LanguageProvider initialLang={lang}>
+            <Nav />
+            <FloatingWhatsapp />
+            <BackToTop />
+            {children}
+            <Footer />
+          </LanguageProvider>
         </AOSWrapper>
       </body>
     </html>

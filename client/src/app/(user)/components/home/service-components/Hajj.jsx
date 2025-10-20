@@ -9,15 +9,18 @@ import { TbCurrencyTaka } from "react-icons/tb";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
+import { useLanguage } from "@/context/LanguageContext";
+import { text } from "@/data/translation";
 
 const Hajj = () => {
+  const { lang, toggleLang } = useLanguage();
   return (
     <section className="pt-15 lg:pt-28 pb-10">
       <h2
         data-aos="fade-right"
         className="container text-4xl md:text-5xl lg:text-6xl mb-10 text-dark font-jakarta font-semibold text-shadow-darkest border-b-4 border-brand w-fit"
       >
-        Hajj Packages
+        {text[lang].hajj}
       </h2>
 
       <div className="container hidden sm:grid xl:px-26 grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-6 pt-10 lg:pt-20">

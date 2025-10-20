@@ -1,7 +1,11 @@
+import { text } from "@/data/translation";
+import { cookies } from "next/headers";
 import Image from "next/image";
 import React from "react";
 
 const MeetTheCeo = () => {
+  const cookieStore = cookies();
+  const lang = cookieStore.get("lang")?.value || "bn";
   return (
     <>
       <section className="relative overflow-x-hidden pt-10 pb-10 sm:pb-30 px-3 bg-light overflow-hidden">
@@ -23,9 +27,9 @@ const MeetTheCeo = () => {
               data-aos-duration="800"
               className="text-4xl  font-jakarta font-semibold w-fit text-dark text-shadow-darkest  sm:border-b-4  border-brand pt-15 sm:pt-0"
             >
-              Meet the{" "}
+              {text[lang].meetproprietor1}{" "}
               <p className="inline-block border-b-4 border-brand sm:border-none">
-                Proprietor,
+                {text[lang].meetproprietor2},
               </p>
             </h2>
             <h3
@@ -33,23 +37,21 @@ const MeetTheCeo = () => {
               data-aos-duration="1200"
               className="mt-5 text-3xl font-jakarta font-semibold text-dark/90 mb-2"
             >
-              Hossian Ahmed Mazumdar
+              {text[lang].ceo},
             </h3>
             <h4
               data-aos="fade-up"
               data-aos-duration="1500"
               className="text-xl font-roboto text-dark/80 border-b border-brand rounded-xl w-fit"
             >
-              Ali Air Travels
+              {text[lang].company}
             </h4>
             <p
               data-aos="fade-up"
               data-aos-duration="2000"
               className="mt-3 font-roboto text-lg max-w-xl text-gray-600 leading-relaxed pt-4"
             >
-              Mr. Hossian Ahmed Mazumdar is the visionary leader behind our
-              success, bringing innovation and dedication to every aspect of our
-              company.
+              {text[lang].ceoabout}
             </p>
           </div>
         </div>

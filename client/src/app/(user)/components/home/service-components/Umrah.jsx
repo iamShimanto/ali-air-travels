@@ -9,15 +9,18 @@ import { TbCurrencyTaka } from "react-icons/tb";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
+import { useLanguage } from "@/context/LanguageContext";
+import { text } from "@/data/translation";
 
 const Umrah = () => {
+  const { lang, toggleLang } = useLanguage();
   return (
     <section className="py-10">
       <h2
         data-aos="fade-right"
         className="container text-4xl md:text-5xl lg:text-6xl mb-10 text-dark font-jakarta font-semibold text-shadow-darkest border-b-4 border-brand w-fit"
       >
-        Umrah Packages
+        {text[lang].umrah}
       </h2>
 
       <div className="container hidden sm:grid xl:px-26 grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-7 pt-10 lg:pt-20">

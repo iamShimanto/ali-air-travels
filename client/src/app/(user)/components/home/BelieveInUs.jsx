@@ -5,8 +5,11 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import "swiper/css";
 import Image from "next/image";
+import { text } from "@/data/translation";
+import { useLanguage } from "@/context/LanguageContext";
 
 const BelieveInUs = () => {
+  const { lang, toggleLang } = useLanguage();
   return (
     <section className="px-3 pt-15 pb-8">
       <div className="container">
@@ -14,7 +17,7 @@ const BelieveInUs = () => {
           data-aos="fade-right"
           className="text-4xl md:text-5xl lg:text-6xl mb-10 text-dark font-jakarta font-semibold text-shadow-darkest border-b-4 border-brand w-fit overflow-hidden"
         >
-          Believe In Us
+          {text[lang].believe}
         </h2>
 
         <Swiper
