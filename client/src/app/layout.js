@@ -8,7 +8,6 @@ import AOSWrapper from "./(user)/components/common/AosWrapper";
 import "aos/dist/aos.css";
 import { LanguageProvider } from "@/context/LanguageContext";
 import { cookies } from "next/headers";
-import baseUrl from "./baseUrl";
 
 const plusJakarta = Plus_Jakarta_Sans({
   variable: "--font-plus-jakarta",
@@ -21,17 +20,43 @@ const roboto = Roboto({
 });
 
 export const metadata = {
-  title: "ali air travels",
-  description: "ali air travels",
+  title: "Ali Air Travels | Hajj & Umrah Packages Bangladesh",
+  description:
+    "Ali Air Travels offers premium Hajj & Umrah packages from Bangladesh with full guidance, visa support, and halal services.",
+  keywords: [
+    "Umrah Bangladesh",
+    "Hajj Bangladesh",
+    "Hajj Packages",
+    "Umrah Packages",
+    "Travel Bangladesh",
+    "Islamic Tours",
+    "Ali Air Travels",
+    "Air Travels BD"
+  ],
 };
 
 export default async function RootLayout({ children }) {
   const cookieStore = await cookies();
-  const lang = await cookieStore.get("lang")?.value || "en";
-
+  const lang = (await cookieStore.get("lang")?.value) || "en";
 
   return (
-    <html lang="en">
+    <html lang={lang}>
+      <head>
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-R939ELYEVT"
+        ></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-R939ELYEVT');
+            `,
+          }}
+        />
+      </head>
       <body
         className={`${plusJakarta.variable} ${roboto.variable} antialiased`}
       >
