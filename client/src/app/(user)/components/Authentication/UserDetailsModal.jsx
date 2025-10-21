@@ -4,7 +4,7 @@ import Image from "next/image";
 import React, { useEffect, useRef } from "react";
 import { BsX } from "react-icons/bs";
 
-const UserDetailsModal = ({ isOpen, onClose, user }) => {
+const UserDetailsModal = ({ isOpen, onClose, user, setUser }) => {
   const modalRef = useRef(null);
 
   useEffect(() => {
@@ -18,6 +18,17 @@ const UserDetailsModal = ({ isOpen, onClose, user }) => {
   }, [isOpen, onClose]);
 
   if (!isOpen) return null;
+
+  const handleLogout = () => {
+    // Clear user from localStorage
+    localStorage.removeItem("user");
+
+    // Update parent state
+    setUser(null);
+
+    // Close the modal
+    onClose();
+  };
 
   return (
     <div className="fixed inset-0 z-[999] flex items-center justify-center bg-black/50 backdrop-blur-sm">
@@ -46,7 +57,7 @@ const UserDetailsModal = ({ isOpen, onClose, user }) => {
         <div className="space-y-4 font-roboto">
           <div>
             <p className="text-dark/80 font-medium">Name:</p>
-            <p className="text-dark">{user?.name || "John Doe"}</p>
+            <p className="text-dark">{user?.fullName || "John Doe"}</p>
           </div>
           <div>
             <p className="text-dark/80 font-medium">Email:</p>
@@ -57,8 +68,12 @@ const UserDetailsModal = ({ isOpen, onClose, user }) => {
             <p className="text-dark">{user?.phone || "+880123456789"}</p>
           </div>
         </div>
-        <button className="mt-5 mb-3 text-2xl font-semibold font-jakarta text-white nav-custom-shadow  cursor-pointer bg-red-600 lg:bg-red-500 hover:bg-red-600 duration-200 w-full rounded-xl py-2">
-          logout
+
+        <button
+          onClick={handleLogout}
+          className="mt-5 mb-3 text-2xl font-semibold font-jakarta text-white nav-custom-shadow cursor-pointer bg-red-600 lg:bg-red-500 hover:bg-red-600 duration-200 w-full rounded-xl py-2"
+        >
+          Logout
         </button>
       </div>
     </div>

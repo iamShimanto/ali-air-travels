@@ -21,7 +21,7 @@ const allPackage = async (req, res) => {
     if (type) filter.type = type;
     if (category) filter.category = category;
 
-    const packages = await packageModel.find(filter);
+    const packages = await packageModel.find(filter).sort({ createdAt: 1 });
 
     const data = packages.map((pkg) => ({
       id: pkg._id,

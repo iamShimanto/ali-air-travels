@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { PiDotsThreeOutlineFill } from "react-icons/pi";
@@ -21,9 +21,17 @@ const Nav = () => {
   const [langOpen, setLangOpen] = useState(false);
   const [showAuthModal, setShowAuthModal] = useState(false);
   const [showUserDetails, setShowUserDetails] = useState(false);
+  const [user, setUser] = useState(null); // User state
 
   const { lang, toggleLang } = useLanguage();
   const router = useRouter();
+
+  useEffect(() => {
+    const storedUser = localStorage.getItem("user");
+    if (storedUser) {
+      setUser(JSON.parse(storedUser));
+    }
+  }, []);
 
   const handleToggleLang = () => {
     toggleLang();
@@ -50,7 +58,7 @@ const Nav = () => {
               </div>
             </Link>
 
-           
+            {/* Desktop Menu */}
             <div className="hidden md:flex">
               <ul className="flex items-center gap-2 lg:gap-4 font-jakarta">
                 <li>
@@ -78,7 +86,7 @@ const Nav = () => {
                   </Link>
                 </li>
 
-            
+                {/* Language Toggle */}
                 <li className="ml-5 relative">
                   <button
                     onMouseEnter={() => setLangOpen(true)}
@@ -110,7 +118,11 @@ const Nav = () => {
 
                 {/* WhatsApp */}
                 <li className="hidden lg:flex">
-                  <Link href="/contact">
+                  <Link
+                    href="https://wa.me/8801345934447"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <div className="relative w-8 lg:w-10 h-8 lg:h-10">
                       <Image
                         src="/WhatsApp.png"
@@ -122,24 +134,27 @@ const Nav = () => {
                   </Link>
                 </li>
 
-                {/* Login / User */}
-                <li>
-                  <button
-                    onClick={() => setShowAuthModal(true)}
-                    className="text-[15px] lg:text-[18px] cursor-pointer px-2 lg:px-3 leading-5 text-dark/80 hover:text-brand font-headerFont transition-all duration-200"
-                  >
-                    Login /<br />
-                    Sign-Up
-                  </button>
-                </li>
-                <li>
-                  <button
-                    onClick={() => setShowUserDetails(true)}
-                    className="text-[20px] lg:text-[27px] cursor-pointer mx-3 mt-1.5 leading-5 text-dark/80 hover:text-brand font-headerFont transition-all duration-200"
-                  >
-                    <FaRegUser />
-                  </button>
-                </li>
+                {/* Login/Profile toggle */}
+                {user ? (
+                  <li>
+                    <button
+                      onClick={() => setShowUserDetails(true)}
+                      className="text-[20px] lg:text-[27px] cursor-pointer mx-3 mt-1.5 leading-5 text-dark/80 hover:text-brand font-headerFont transition-all duration-200"
+                    >
+                      <FaRegUser />
+                    </button>
+                  </li>
+                ) : (
+                  <li>
+                    <button
+                      onClick={() => setShowAuthModal(true)}
+                      className="text-[15px] lg:text-[18px] cursor-pointer px-2 lg:px-3 leading-5 text-dark/80 hover:text-brand font-headerFont transition-all duration-200"
+                    >
+                      Login /<br />
+                      Sign-Up
+                    </button>
+                  </li>
+                )}
               </ul>
             </div>
 
@@ -211,17 +226,33 @@ const Nav = () => {
                   {text[lang].myBooking} <IoBookmarksOutline />
                 </Link>
               </li>
-              <li>
-                <button
-                  onClick={() => {
-                    setShowAuthModal(true);
-                    setMenuOpen(false);
-                  }}
-                  className="flex items-center gap-4 w-full px-4 py-2 text-[20px] text-dark/80 rounded transition-all border-b border-dark/20"
-                >
-                  Login / Sign-Up <RiUserLine />
-                </button>
-              </li>
+
+              {/* Mobile Login/Profile toggle */}
+              {user ? (
+                <li>
+                  <button
+                    onClick={() => {
+                      setShowUserDetails(true);
+                      setMenuOpen(false);
+                    }}
+                    className="flex items-center gap-4 w-full px-4 py-2 text-[20px] text-dark/80 rounded transition-all border-b border-dark/20"
+                  >
+                    <FaRegUser /> Profile
+                  </button>
+                </li>
+              ) : (
+                <li>
+                  <button
+                    onClick={() => {
+                      setShowAuthModal(true);
+                      setMenuOpen(false);
+                    }}
+                    className="flex items-center gap-4 w-full px-4 py-2 text-[20px] text-dark/80 rounded transition-all border-b border-dark/20"
+                  >
+                    Login / Sign-Up <RiUserLine />
+                  </button>
+                </li>
+              )}
 
               {/* Mobile language toggle */}
               <li className="mt-6">
@@ -237,7 +268,9 @@ const Nav = () => {
             </ul>
 
             <Link
-              href="/contact"
+              href="https://wa.me/8801345934447"
+              target="_blank"
+              rel="noopener noreferrer"
               onClick={() => setMenuOpen(false)}
               className="flex items-center gap-5 w-full px-4 py-2 mt-6 text-[26px] bg-[#5F8B4C] text-white rounded shadow-lg"
             >
@@ -251,15 +284,13 @@ const Nav = () => {
       <AuthModal
         isOpen={showAuthModal}
         onClose={() => setShowAuthModal(false)}
+        setUser={setUser}
       />
       <UserDetailsModal
+        user={user}
+        setUser={setUser}
         isOpen={showUserDetails}
         onClose={() => setShowUserDetails(false)}
-        user={{
-          name: "John Doe",
-          email: "john@example.com",
-          phone: "+880123456789",
-        }}
       />
     </>
   );

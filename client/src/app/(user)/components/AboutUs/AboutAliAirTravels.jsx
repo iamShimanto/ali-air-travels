@@ -1,8 +1,12 @@
+import { text } from "@/data/translation";
+import { cookies } from "next/headers";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
 const AboutAliAirTravels = () => {
+  const cookieStore = cookies();
+  const lang = cookieStore.get("lang")?.value || "bn";
   return (
     <section className="px-3 py-10 md:pt-20 pb-0 overflow-hidden">
       <div className="container">
@@ -11,17 +15,14 @@ const AboutAliAirTravels = () => {
             data-aos="fade-right"
             className="mx-auto text-4xl md:text-5xl lg:text-6xl mb-10 text-dark font-jakarta font-semibold text-shadow-darkest border-b-4 border-brand w-fit"
           >
-            About Us
+            {text[lang].about}
           </h2>
           <p
             data-aos="fade-up"
             className="text-lg md:text-xl text-dark font-jakarta text-shadow-dark text-center max-w-3xl mx-auto"
           >
             {" "}
-            Ali Air Travels & Tours , a trusted business support Muslim
-            communities around the bangladesh by providing unparalleled access
-            to faith-based practices. This includes religious obligations such
-            as Umrah, Travel and Shariah-compliant Lifestyle choices.
+            {text[lang].aboutus}
           </p>
         </div>
         <div className="py-15 grid grid-cols-1 md:grid-cols-2 place-items-center  gap-5">
@@ -43,23 +44,21 @@ const AboutAliAirTravels = () => {
               data-aos-duration="1000"
               className="text-2xl md:text-3xl pt-5 text-dark/90 font-jakarta text-shadow-darker border-b-2 border-brand  w-fit"
             >
-              FROM THE PROPRIETOR
+              {text[lang].fromceo}
             </h3>
             <p
               data-aos="fade-up"
               data-aos-duration="1600"
               className="text-lg md:text-xl pt-5 text-dark/80 font-jakarta text-shadow-darker  max-w-md leading-10"
             >
-              "It's for the Ummah. Our business is to bring ibadah and education
-              closer to the Ummah as a community and managing the guest of Allah
-              SWT"
+              {text[lang].aboutus1}
             </p>
             <h4
               data-aos="fade-up"
               data-aos-duration="1800"
               className="text-xl md:text-2xl pt-5 text-dark/90 font-jakarta text-shadow-darker "
             >
-              -lorem lorem
+              -{text[lang].ceo}
             </h4>
           </div>
         </div>

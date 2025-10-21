@@ -1,14 +1,15 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import React, { useState } from "react";
 
 const FloatingWhatsapp = () => {
   const [visible, setVisible] = useState(true);
 
   return (
-    <a
-      href="https://wa.me/880XXXXXXXXXX"
+    <Link
+      href="https://wa.me/8801345934447"
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Chat on WhatsApp"
@@ -28,7 +29,7 @@ const FloatingWhatsapp = () => {
           className="object-contain  transition-all lg:hover:scale-110"
         />
       </div>
-    </a>
+    </Link>
   );
 };
 

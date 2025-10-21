@@ -150,11 +150,11 @@ const BelieveInUs = () => {
           <SwiperSlide>
             <div className="p-2 mt-7 bg-black rounded-2xl flex items-center justify-center">
               <Image
-                src="/weblaa-logo.png"
+                src="/websola.png"
                 alt="Weblaa"
                 width={250}
                 height={150}
-                className="object-contain"
+                className="object-contain my-5"
                 loading="eager"
                 priority
               />

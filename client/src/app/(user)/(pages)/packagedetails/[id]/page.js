@@ -10,7 +10,6 @@ const page = async ({ params }) => {
 
   const res = await fetch(`${baseUrl()}/package/package/${param}?lang=${lang}`);
   const result = await res.json();
-  console.log(result);
 
   return (
     <div>
@@ -66,7 +65,7 @@ const page = async ({ params }) => {
           </div>
 
           <div className=" w-full sm:w-fit mt-10 rounded-2xl">
-            <BookNowButton />
+            <BookNowButton data={result} />
           </div>
         </div>
       </section>

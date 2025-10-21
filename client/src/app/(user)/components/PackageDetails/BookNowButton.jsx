@@ -3,9 +3,8 @@
 import React, { useState } from "react";
 import BookNowRegistraion from "./BookNowRegistration";
 
-const BookNowButton = () => {
+const BookNowButton = ({ data }) => {
   const [showModal, setShowModal] = useState(false);
-
   return (
     <>
       <button
@@ -16,6 +15,7 @@ const BookNowButton = () => {
       </button>
 
       <BookNowRegistraion
+        data={data}
         isOpen={showModal}
         onClose={() => setShowModal(false)}
       />

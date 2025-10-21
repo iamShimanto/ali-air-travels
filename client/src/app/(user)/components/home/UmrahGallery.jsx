@@ -1,10 +1,13 @@
 "use client";
+import { useLanguage } from "@/context/LanguageContext";
+import { text } from "@/data/translation";
 import Image from "next/image";
 import React, { useState } from "react";
 
 const HajjGallery = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeIndex, setActiveIndex] = useState(null);
+  const { lang, toggleLang } = useLanguage();
 
   const openModal = (index) => {
     setActiveIndex(index);
@@ -46,9 +49,9 @@ const HajjGallery = () => {
           data-aos-duration="1600"
           className="text-4xl md:text-5xl lg:text-6xl mb-10 text-dark font-jakarta font-semibold text-shadow-darkest sm:border-b-4 border-brand w-fit"
         >
-          Umrah & Hajj{" "}
+          {text[lang].gallery1}{" "}
           <p className="inline-block border-b-4 border-brand sm:border-none">
-            Gallery
+            {text[lang].gallery2}
           </p>
         </h2>
 
@@ -99,7 +102,7 @@ const HajjGallery = () => {
               className="col-span-2 relative w-full nav-custom-shadow h-[60px] font-jakarta text-xl lg:text-2xl text-glow flex items-center justify-center bg-brand text-white font-semibold rounded-xl cursor-pointer hover:bg-brand/80 transition"
               onClick={() => openModal(0)}
             >
-              View Full Gallery
+              {text[lang].gallery}
             </div>
           </div>
         </div>

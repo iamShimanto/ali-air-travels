@@ -1,6 +1,8 @@
 const bookingModel = require("../model/bookingModel");
 const packageModel = require("../model/packageModel");
+
 const { errorResponse, successResponse } = require("../utils/responseHandler");
+const sendAdminEmail = require("../utils/sendAdminEmail");
 
 const createBooking = async (req, res) => {
   try {
@@ -30,6 +32,38 @@ const createBooking = async (req, res) => {
       notes,
     });
     await booking.save();
+
+    try {
+      const adminEmail = process.env.ADMIN_EMAIL;
+      if (adminEmail) {
+        const subject = "New Package Booking Received";
+        const htmlContent = `
+          <h2 style="color:#0ea5e9; margin-bottom: 18px;">New Booking Alert!</h2>
+          <table style="width:100%; border-collapse:collapse; margin-bottom: 24px;">
+            <tr><td style="padding:8px 0;"><b>Name:</b></td><td>${customer_name}</td></tr>
+            <tr><td style="padding:8px 0;"><b>Email:</b></td><td>${customer_email}</td></tr>
+            <tr><td style="padding:8px 0;"><b>Phone:</b></td><td>${customer_phone}</td></tr>
+            <tr><td style="padding:8px 0;"><b>Pax:</b></td><td>${pax}</td></tr>
+            <tr><td style="padding:8px 0;"><b>Package:</b></td><td>${
+              pkg.title_en || pkg.title_bn || pkg.title || "N/A"
+            }</td></tr>
+            <tr><td style="padding:8px 0;"><b>Category:</b></td><td>${
+              pkg.category
+            }</td></tr>
+            <tr><td style="padding:8px 0;"><b>Type:</b></td><td>${
+              pkg.type
+            }</td></tr>
+            <tr><td style="padding:8px 0;"><b>Notes:</b></td><td>${
+              notes || "N/A"
+            }</td></tr>
+          </table>
+          <p style="color:#334155; font-size:15px;">Please review and follow up as needed.<br>— <b>Ali Air Travels System</b></p>
+        `;
+        await sendAdminEmail(adminEmail, subject, htmlContent);
+      }
+    } catch (emailErr) {
+      console.error("Booking confirmation email to admin failed:", emailErr);
+    }
 
     return successResponse(res, 200, "Booking created Successfully", booking);
   } catch (error) {

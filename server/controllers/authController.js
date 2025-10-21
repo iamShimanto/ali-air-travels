@@ -239,6 +239,47 @@ const getProfile = async (req, res) => {
   }
 };
 
+const changePassword = async (req, res) => {
+  try {
+    const userId = req.userId;
+    const { oldPassword, newPassword } = req.body;
+
+    // Validate inputs
+    if (!oldPassword || !newPassword) {
+      return errorResponse(res, 400, "Old and new password required");
+    }
+    if (newPassword.length < 6) {
+      return errorResponse(
+        res,
+        400,
+        "New password must be at least 6 characters"
+      );
+    }
+
+    // Find user
+    const user = await Users.findById(userId);
+    if (!user) {
+      return errorResponse(res, 404, "User not found");
+    }
+
+    // Check old password
+    const isMatch = await bcrypt.compare(oldPassword, user.password);
+    if (!isMatch) {
+      return errorResponse(res, 400, "Old password is incorrect");
+    }
+
+    // Hash new password
+    const hashedPassword = await bcrypt.hash(newPassword, 10);
+    user.password = hashedPassword;
+    await user.save();
+
+    return successResponse(res, 200, "Password changed successfully");
+  } catch (error) {
+    return errorResponse(res, 500, "Password change failed", error);
+  }
+};
+
+
 module.exports = {
   userSignUp,
   userLogIn,
@@ -248,4 +289,5 @@ module.exports = {
   getSingleUser,
   userRoleUpdate,
   getProfile,
+  changePassword,
 };

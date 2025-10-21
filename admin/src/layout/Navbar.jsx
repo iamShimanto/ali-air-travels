@@ -60,6 +60,14 @@ const Navbar = () => {
                 >
                   Bookings
                 </NavLink>
+                <NavLink
+                  to="/admin/profile"
+                  className={({ isActive }) =>
+                    `${linkBase} ${isActive ? linkActive : linkInactive}`
+                  }
+                >
+                  Admin Profile
+                </NavLink>
               </div>
             </div>
           </div>
@@ -143,6 +151,15 @@ const Navbar = () => {
               }
             >
               Bookings
+            </NavLink>
+            <NavLink
+              onClick={() => setOpen(false)}
+              to="/admin/profile"
+              className={({ isActive }) =>
+                `${linkBase} block ${isActive ? linkActive : linkInactive}`
+              }
+            >
+              Admin Profile
             </NavLink>
             <button
               onClick={() => {

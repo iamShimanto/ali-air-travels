@@ -6,6 +6,8 @@ import { ToastContainer } from "react-toastify";
 import Users from "./pages/Users";
 import Packages from "./pages/Packages";
 import Bookings from "./pages/Bookings";
+import EditPackage from "./pages/EditPackage";
+import AdminProfile from "./pages/AdminProfile";
 
 function App() {
   return (
@@ -17,7 +19,9 @@ function App() {
             <Route index element={<Home />} />
             <Route path="/users" element={<Users />} />
             <Route path="/packages" element={<Packages />} />
+            <Route path="/admin/packages/:id" element={<EditPackage />} />
             <Route path="/bookings" element={<Bookings />} />
+            <Route path="/admin/profile" element={<AdminProfile />} />
           </Route>
           <Route path="/login" element={<Login />} />
         </Routes>

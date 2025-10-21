@@ -2,6 +2,7 @@ import React from "react";
 import Sliders from "./slider/Sliders";
 import { cookies } from "next/headers";
 import { text } from "@/data/translation";
+import Link from "next/link";
 
 const Banner = () => {
   const cookieStore = cookies();
@@ -35,12 +36,12 @@ const Banner = () => {
                   {text[lang].bannerbottom}
                 </span>
               </h1>
-              <button
+              <Link href={"/aboutus"}
                 data-aos="fade-up"
                 className="scale-97 mt-10 sm:mt-20 w-fit mx-auto cursor-pointer bg-brand px-4 sm:px-4 py-1.5 sm:py-3 font-jakarta font-semibold text-light text-glow text-lg sm:text-2xl nav-custom-shadow rounded-xl  flex justify-center items-center transition-all hover:scale-100"
               >
                 {text[lang].bannerexplore}
-              </button>
+              </Link>
             </div>
           </div>
         </div>
