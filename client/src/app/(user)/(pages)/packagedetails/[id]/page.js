@@ -64,15 +64,16 @@ const Page = async ({ params }) => {
   );
   const result = await res.json();
   const pkg = result?.data;
+  console.log(result)
 
   if (!pkg) return <div>Package not found.</div>;
 
   const schemaPackage = {
     "@context": "https://schema.org",
     "@type": "TouristTrip",
-    name: pkg.title,
-    description: pkg.description,
-    image: pkg.image || "https://aliairtravels.com/banner-logo.png",
+    name: pkg?.title,
+    description: pkg?.description,
+    image: pkg?.image || "https://aliairtravels.com/banner-logo.png",
     url: `https://aliairtravels.com/packagedetails/${params.id}`,
     offers: {
       "@type": "Offer",

@@ -65,7 +65,7 @@ const BookNowRegistration = ({ isOpen, onClose, data }) => {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          packageId: data?.data?.id,
+          packageId: data?.id,
           customer_name: formData.customer_name,
           customer_email: formData.customer_email,
           customer_phone: formData.customer_phone,
@@ -78,12 +78,13 @@ const BookNowRegistration = ({ isOpen, onClose, data }) => {
       });
 
       const result = await response.json();
+      console.log(result)
       if (response.ok) {
         setSuccessMsg("Booking created successfully!");
 
         localStorage.setItem(
           "bookedPackage",
-          JSON.stringify({ id: data?.data?.id, date: new Date() })
+          JSON.stringify({ id: data?.id, date: new Date() })
         );
         localStorage.setItem("bookingpackage", JSON.stringify({ formData }));
 
