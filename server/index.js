@@ -24,6 +24,7 @@ app.use(
     origin: [
       "http://localhost:5173",
       "http://localhost:3000",
+      "https://aliairtravels.com",
       process.env.CLIENT_URL,
       process.env.ADMIN_URL,
     ],
