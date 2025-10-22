@@ -25,7 +25,6 @@ const Page = () => {
       setPackaged(result?.data);
     })();
   }, [packageId]);
-  console.log(packaged);
 
   return (
     <>

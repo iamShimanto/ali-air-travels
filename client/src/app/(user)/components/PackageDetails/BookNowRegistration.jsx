@@ -78,7 +78,6 @@ const BookNowRegistration = ({ isOpen, onClose, data }) => {
       });
 
       const result = await response.json();
-      console.log(result)
       if (response.ok) {
         setSuccessMsg("Booking created successfully!");
 

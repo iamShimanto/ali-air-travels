@@ -64,7 +64,6 @@ const Page = async ({ params }) => {
   );
   const result = await res.json();
   const pkg = result?.data;
-  console.log(result)
 
   if (!pkg) return <div>Package not found.</div>;
 
