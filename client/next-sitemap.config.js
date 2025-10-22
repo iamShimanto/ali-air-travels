@@ -12,7 +12,7 @@ module.exports = {
       hreflang: "en",
     },
     {
-      href: "https://aliairtravels.com/bn/",
+      href: "https://aliairtravels.com/",
       hreflang: "bn",
     },
   ],
