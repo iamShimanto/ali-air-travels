@@ -1,9 +1,0 @@
-# *
-User-agent: *
-Allow: /
-
-# Host
-Host: https://aliairtravels.com
-
-# Sitemaps
-Sitemap: https://aliairtravels.com/sitemap.xml
