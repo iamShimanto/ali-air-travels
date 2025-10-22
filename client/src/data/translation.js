@@ -9,7 +9,7 @@ export const text = {
     bannerexplore: "explore more",
     meetproprietor1: "Meet the",
     meetproprietor2: "Proprietor",
-    ceo: "Hossian Ahmed Mazumdar",
+    ceo: "Hossain Ahmed Mazumder",
     company: "Ali Air Travels",
     ceoabout:
       "Mr. Hossian Ahmed Mazumdar is the visionary leader behind our success, bringing innovation and dedication to every aspect of our company.",
@@ -56,7 +56,7 @@ export const text = {
     bannerexplore: "আরও জানুন",
     meetproprietor1: "মালিকের সাথে",
     meetproprietor2: "পরিচিত হন",
-    ceo: "হোসায়িন আহমেদ মজুমদার",
+    ceo: "হোসাইন আহমেদ মজুমদার",
     company: "আলি এয়ার ট্র্যাভেলস",
     ceoabout:
       "মি. হোসায়িন আহমেদ মজুমদার আমাদের সাফল্যের পিছনের দূরদর্শী নেতা, যিনি আমাদের কোম্পানির প্রতিটি ক্ষেত্রে নতুনত্ব এবং সমर्पণ নিয়ে আসেন।",
