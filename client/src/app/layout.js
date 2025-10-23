@@ -25,6 +25,9 @@ export const metadata = {
   description:
     "Ali Air Travels offers premium Hajj & Umrah packages from Bangladesh with full guidance, visa support, and halal services.",
   keywords: [
+    "ali air travels & tours",
+    "hajj package in bangladesh",
+    "umrah package in bangladesh",
     "Umrah Bangladesh",
     "Hajj Bangladesh",
     "Hajj Packages",
@@ -34,6 +37,30 @@ export const metadata = {
     "Ali Air Travels",
     "Air Travels BD",
   ],
+  openGraph: {
+    title: "Ali Air Travels | Hajj & Umrah Packages Bangladesh",
+    description:
+      "Ali Air Travels offers premium Hajj & Umrah packages from Bangladesh with full guidance, visa support, and halal services.",
+    url: "https://aliairtravels.com",
+    siteName: "aliairtravels.com",
+    images: [
+      {
+        url: "https://aliairtravels.com/banner-logo.png",
+        width: 1200,
+        height: 630,
+        alt: "Ali Air Travels",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Ali Air Travels | Hajj & Umrah Packages Bangladesh",
+    description:
+      "Ali Air Travels offers premium Hajj & Umrah packages from Bangladesh with full guidance, visa support, and halal services.",
+    images: ["https://aliairtravels.com/banner-logo.png"],
+  },
 };
 
 export default async function RootLayout({ children }) {
@@ -42,14 +69,11 @@ export default async function RootLayout({ children }) {
 
   const schema = {
     "@context": "https://schema.org",
-    "@type": "Person",
-    name: "Shimanto Sarkar",
-    url: "https://shimanto.cloud",
-    jobTitle: "Full Stack Developer",
-    sameAs: [
-      "https://www.linkedin.com/in/shimantosarkar",
-      "https://github.com/shimanto-sarkar",
-    ],
+    "@type": "Agency",
+    name: "Ali Air Travels",
+    url: "https://aliairtravels.com",
+    jobTitle: "Ali Air Travels",
+    sameAs: ["https://www.facebook.com/share/14LcR2Nu5st/"],
   };
 
   return (

@@ -18,6 +18,7 @@ const Hajj = async () => {
   );
 
   const result = await res.json();
+  console.log(result);
 
   return (
     <section className="pt-15 lg:pt-28 pb-10">
@@ -37,7 +38,7 @@ const Hajj = async () => {
           >
             <div
               className="relative group h-[25dvh] sm:h-[35dvh]  bg-center bg-no-repeat bg-cover rounded-t-lg sm:rounded-t-3xl overflow-hidden"
-              style={{ backgroundImage: "url('/hajj-1.jpg')" }}
+              style={{ backgroundImage: `url('/${item.img}')` }}
             >
               <div className="absolute inset-0 bg-black/40 z-[1] transition-all duration-300" />
 

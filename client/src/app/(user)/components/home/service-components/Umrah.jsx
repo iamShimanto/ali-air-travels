@@ -39,7 +39,7 @@ const Umrah = async () => {
           >
             <div
               className="relative group h-[25dvh] sm:h-[35dvh] bg-center bg-no-repeat bg-cover rounded-t-lg sm:rounded-t-3xl overflow-hidden"
-              style={{ backgroundImage: "url('/umrah-1.jpeg')" }}
+              style={{ backgroundImage: `url('/${item.img}')` }}
             >
               <div className="absolute inset-0 bg-black/40 z-[1] transition-all duration-300" />
 

@@ -29,6 +29,7 @@ const packageSchema = new mongoose.Schema(
     visa_ticket_bn: { type: String },
     qurbani_en: { type: String },
     qurbani_bn: { type: String },
+    img: { type: String },
   },
   { timestamps: true }
 );

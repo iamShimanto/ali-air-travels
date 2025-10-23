@@ -44,6 +44,8 @@ const allPackage = async (req, res) => {
           : pkg.madinah_accommodation_en,
       visa_ticket: lang === "bn" ? pkg.visa_ticket_bn : pkg.visa_ticket_en,
       qurbani: lang === "bn" ? pkg.qurbani_bn : pkg.qurbani_en,
+
+      img: pkg.img
     }));
 
     return successResponse(res, 200, "Packaged fetched successfully", data);
