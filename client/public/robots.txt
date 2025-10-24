@@ -1,9 +1,6 @@
-# *
+# Allow all crawlers to access the entire site
 User-agent: *
 Allow: /
 
-# Host
-Host: https://aliairtravels.com
-
-# Sitemaps
+# Sitemap location
 Sitemap: https://aliairtravels.com/sitemap.xml
